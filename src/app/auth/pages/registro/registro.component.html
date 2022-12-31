@@ -1,0 +1,38 @@
+<div class="wrapper bg-white">
+    <div class="h2 text-center">Nuevo Usuario</div>
+    <form class="pt-3" [formGroup]="registroForm" (ngSubmit)="registro()">
+        <div class="form-group py-2">
+            <div class="input-field"> 
+                <input type="text" formControlName="email" placeholder="Nombre" required formControlName="name">
+                <span class="form-text text-danger"
+                    *ngIf="campoNoValido('name')">
+                    Nombre obligatorio
+                </span>
+            </div>
+        </div>
+        <div class="form-group py-1">
+            <div class="input-field">
+                <input type="mail" placeholder="Email" required formControlName="email">
+                <span class="form-text text-danger"
+                    *ngIf="campoNoValido('email')">
+                    Correo obligatorio
+                </span>
+            </div>
+        </div>
+        <div class="form-group py-1">
+            <div class="input-field">
+                <input type="password" placeholder="Contraseña" required formControlName="password">
+                <span class="form-text text-danger"
+                    *ngIf="campoNoValido('password')">
+                    Contraseña debe contener al menos 6 caracteres
+                </span>
+            </div>
+        </div>
+        <div class="d-flex align-items-start">
+            <div class="remember"> <label class="option text-muted"> Recordarme &nbsp;<input type="radio" name="radio"> <span class="checkmark"></span> </label> </div>
+            <div class="ml-auto"> <a href="#" id="forgot">Olvidaste tu contraseña?</a> </div>
+        </div> 
+        <button type="submit" [disabled]="registroForm.invalid" class="btn btn-block text-center my-3">Registrarse</button>
+        <div class="text-center pt-3 text-muted">Ya tiene cuenta? <a routerLink="/auth/login">Iniciar sesion</a></div>
+    </form>
+</div> 

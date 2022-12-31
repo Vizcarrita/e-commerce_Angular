@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="card-header">
+    <h4>Productos ( {{ productos.length }} )</h4>
+</div>
+<div class="input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default"><i class="bi bi-search"></i></span>
+    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+            placeholder="Buscar producto..."
+            (keyup)="buscar( txtTermino.value )"
+            #txtTermino>
+</div>
+<div class="row gy-3 my-3">
+  <div class="col-sm-6 col-md-4 col-lg-4" *ngFor="let producto of productos">
+    <div class="card text-bg-dark h-100">
+      <img [src]="producto.img! | imagen:'productos'" class="card-img-top" style="width: 60%; height: auto;" [alt]="producto.name">
+      <div class="card-body">
+        <h5 class="card-header bg-transparent border-white">{{producto.name}}</h5>
+        <p class="card-text">{{producto.descripcion}}</p>
+        <p class="card-text">{{producto.precio}}</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+          <button class="btn btn-primary" type="button"><i class="fa-solid fa-cart-shopping"></i>Add to Cart</button>
+          <button class="btn btn-secondary" type="button" (click)="abrirModal(producto)"><i class="fa-solid fa-circle-info" ></i>More Info</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<nav aria-label="Page navigation example" style="margin-top: 15px;">
+  <ul class="pagination justify-content-center">
+    <li class="page-item" style="cursor: pointer;">
+      <a class="page-link" (click)="cambiarPagina(-5)" tabindex="-1" aria-disabled="true">Previous</a>
+    </li>
+    <li class="page-item active"><a class="page-link">1</a></li>
+    <li class="page-item"><a class="page-link">2</a></li>
+    <li class="page-item"><a class="page-link">3</a></li>
+    <li class="page-item" style="cursor: pointer;">
+      <a class="page-link" (click)="cambiarPagina(5)">Next</a>
+    </li>
+  </ul>
+</nav>
+</div>
+<app-modal-info></app-modal-info>
+
+
+

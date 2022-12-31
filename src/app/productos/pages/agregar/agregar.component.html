@@ -1,0 +1,42 @@
+<div class="card">
+    <div class="card-header">
+        <h4>Agregar Producto</h4>
+    </div>
+    <div class="card-body">
+        <form class="row g-3" (ngSubmit)="guardar()" autocomplete="off" [formGroup]="miFormulario">
+                <div class="col-md-5">
+                  <label class="form-label">Ingrese su producto</label>
+                  <input type="text" class="form-control" formControlName="name">
+                </div>
+                <div class="col-auto">
+                    <label class="form-label">Categoria</label>
+                    <select class="form-select" formControlName="categoria">
+                        <option value="">Selecciona una categoria</option>
+                        <option value="Bebidas">Bebidas</option>
+                        <option value="Tecnologia">Tecnologia</option>
+                        <option value="Ropa">Ropa</option>
+                        <option value="Musica">Musica</option>
+                    </select>
+                  </div>
+                  <div class="col-md-2">
+                    <label class="form-label">Precio</label>
+                    <input type="number"
+                    formControlName="precio"
+                    class="form-control">
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Subir Imagen</label>
+                    <input type="file" class="form-control">
+                  </div>
+                <div class="col-md-5 form-floating">
+                    <textarea class="form-control" placeholder="Ingrese una breve descripcion" style="height: 100px" formControlName="descripcion"></textarea>
+                    <label for="floatingTextarea2">Ingrese una breve descripcion</label>
+                  </div>
+            <div class="mb-3">
+                <button type="submit" [disabled]="miFormulario.invalid" (click)="guardar()" class="btn btn-primary">Agregar</button>
+                 &nbsp;
+                 <button type="button" class="btn btn-danger" routerLink="../listado">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>

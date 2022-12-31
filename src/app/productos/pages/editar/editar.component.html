@@ -1,0 +1,36 @@
+<div class="card">
+    <div class="card-header">
+        <h4>Editar Producto</h4>
+    </div>
+    <div class="card-body">
+        <form (ngSubmit)="editarProducto()" autocomplete="off" [formGroup]="miFormulario">
+            <div class="mb-3">
+                <label for="" class="form-label">Nombre del Producto:</label>
+                <input type="text"
+                formControlName="name"
+                class="form-control" placeholder="Escribe el producto">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Categoria</label>
+                <select class="form-select" formControlName="categoria">
+                    <option value="">Selecciona una categoria</option>
+                    <option value="Bebidas">Bebidas</option>
+                    <option value="Tecnologia">Tecnologia</option>
+                    <option value="Ropa">Ropa</option>
+                    <option value="Musica">Musica</option>
+                  </select>
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">Precio</label>
+                <input type="number"
+                formControlName="precio"
+                class="form-control">
+            </div>
+            <div class="mb-3">
+                <button type="submit" [disabled]="miFormulario.invalid"  (click)="editarProducto()" class="btn btn-primary">Modificar</button>
+                &nbsp;
+                <button type="button" class="btn btn-danger" routerLink="/productos/listado">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>

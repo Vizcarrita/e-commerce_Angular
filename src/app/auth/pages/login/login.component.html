@@ -1,0 +1,21 @@
+<div class="wrapper bg-white">
+    <div class="h2 text-center">Login</div>
+    <form class="pt-3" [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="form-group py-2">
+            <div class="input-field"> 
+                <input type="email" formControlName="email" placeholder="Ingrese su correo" required> 
+            </div>
+        </div>
+        <div class="form-group py-1">
+            <div class="input-field"> 
+                <input type="password" placeholder="Contraseña" formControlName="password" required>
+            </div>
+        </div>
+        <div class="d-flex align-items-start">
+            <div class="remember"> <label class="option text-muted"> Recordarme &nbsp;<input type="radio" name="radio"> <span class="checkmark"></span> </label> </div>
+            <div class="ml-auto"> <a href="#" id="forgot">Olvidaste tu contraseña?</a> </div>
+        </div> 
+        <button type="submit" class="btn btn-block text-center my-3">Iniciar</button>
+        <div class="text-center pt-3 text-muted">No tienes cuenta? <a routerLink="/auth/registro">Registrarse</a></div>
+    </form>
+</div> 
