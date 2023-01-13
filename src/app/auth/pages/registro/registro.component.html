@@ -1,4 +1,33 @@
-<div class="wrapper bg-white">
+<div class="body">
+    <div class="login">
+        <h2>Register</h2>
+        <form class="login-form" [formGroup]="registroForm" (ngSubmit)="registro()">
+            <div class="textbox">
+                <input type="text" placeholder="Username" formControlName="name" required>
+                <span>
+                    <i class="fa-regular fa-circle-user"></i>
+                </span>
+            </div>
+            <div class="textbox">
+                <input type="email" placeholder="Email" formControlName="email" required>
+                <span>
+                    <i class="fa-solid fa-envelope"></i>
+                </span>
+            </div>
+            <div class="textbox">
+                <input type="password" placeholder="Password" formControlName="password" required>
+                <span>
+                    <i class="fa-solid fa-lock"></i>
+                </span>
+            </div>
+            <button type="submit">Registrarse</button>
+            <a routerLink="/auth/login">Ya tienes cuenta? Iniciar sesion</a>
+        </form>
+    </div>
+</div>
+
+
+<!-- <div class="wrapper bg-white">
     <div class="h2 text-center">Nuevo Usuario</div>
     <form class="pt-3" [formGroup]="registroForm" (ngSubmit)="registro()">
         <div class="form-group py-2">
@@ -35,4 +64,4 @@
         <button type="submit" [disabled]="registroForm.invalid" class="btn btn-block text-center my-3">Registrarse</button>
         <div class="text-center pt-3 text-muted">Ya tiene cuenta? <a routerLink="/auth/login">Iniciar sesion</a></div>
     </form>
-</div> 
+</div>  -->

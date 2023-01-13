@@ -11,7 +11,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title" id="exampleModalLabel1">Cargar imagen</h4>
+          <h1 class="modal-title fs-5" id="exampleModalLabel">{{modalInfoService.name}}</h1>
           <button
             type="button"
             class="btn-close"
@@ -21,7 +21,8 @@
           </button>
         </div>
         <div class="modal-body">
-          <h3>Seleccione una imagen</h3>
+          <h3>CLP ${{modalInfoService.precio}}</h3>
+          <img *ngIf="!imgTemp" [src]="modalInfoService.img" class="rounded img-thumbnail">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="cerrarModal()">

@@ -1,42 +1,7 @@
-<!-- Alternativa de natbar -->
-<!-- <div class="hero">
-  <nav>
-    <img src="..." class="logo">
-    <ul>
-      <li><a routerLink="./listado">Home</a></li>
-      <li><a routerLink="./agregar">Agregar Producto</a></li>
-    </ul>
-    <img src="..." alt="..." class="user-pic">
-    <div class="sub-menu-wrap" >
-      <div class="sub-menu">
-        <div class="user-info">
-          <img src="...">
-          <h2>{{usuario.name}}</h2>
-        </div>
-        <hr>
-        <a href="#" class="sub-menu-link">
-          <img src="...">
-          <p>Editar Perfil</p>
-          <span></span>
-        </a>
-        <a href="#" class="sub-menu-link">
-          <img src="...">
-          <p>Cerrar sesion</p>
-          <span></span>
-        </a>
-      </div>
-    </div>
-  </nav>
-  <router-outlet></router-outlet>
-</div> -->
-
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    nombre
-
     <a class="navbar-brand">
-      <span class="text-danger">Crud Angular</span>
+      <span class="text-danger">e-commerce Angular</span>
     </a>
 
     <!-- boton del menu -->
@@ -62,9 +27,22 @@
       <!-- boton Informacion -->
 
       <form class="d-flex">
-        <button type="button" class="btn btn-secondary" disabled>{{usuario.name}}</button>
-        &nbsp;
-        <button class="btn btn-secondary" type="submit" (click)="logout()">Salir</button>
+        <div class="dropdown">
+          
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-circle-user"></i>
+            {{usuario.name}}
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark ">
+            <li>
+              <button class="dropdown-item" type="button">Cuenta</button>
+            </li>
+            <li>
+                <button class="dropdown-item" type="submit" (click)="logout()">Salir</button>
+            </li>
+          </ul>
+        </div>
+        
         &nbsp;
         <button type="button" class="btn btn-success position-relative">
           <i class="fa-solid fa-cart-shopping">

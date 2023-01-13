@@ -8,6 +8,8 @@ import { Producto } from '../../models/producto.model';
   styleUrls: ['./modal-info.component.css']
 })
 export class ModalInfoComponent implements OnInit {
+  
+  public imgTemp: any = null;
 
   constructor(public modalInfoService: ModalInfoService ) { }
 

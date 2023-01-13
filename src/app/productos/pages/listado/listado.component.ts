@@ -72,7 +72,7 @@ export class ListadoComponent implements OnInit {
 
   abrirModal( producto: Producto ){
     console.log(producto);
-    this.modalInfoService.abrirModal();
+    this.modalInfoService.abrirModal('productos', producto._id!, producto.img, producto.name, producto.precio);
   }
 
 }

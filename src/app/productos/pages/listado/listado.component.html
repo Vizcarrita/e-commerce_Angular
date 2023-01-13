@@ -12,7 +12,7 @@
 <div class="row gy-3 my-3">
   <div class="col-sm-6 col-md-4 col-lg-4" *ngFor="let producto of productos">
     <div class="card text-bg-dark h-100">
-      <img [src]="producto.img! | imagen:'productos'" class="card-img-top" style="width: 60%; height: auto;" [alt]="producto.name">
+      <img [src]="producto.img! | imagen:'productos'" class="rounded mx-auto d-block" style="width:60%;height: auto;" [alt]="producto.name">
       <div class="card-body">
         <h5 class="card-header bg-transparent border-white">{{producto.name}}</h5>
         <p class="card-text">{{producto.descripcion}}</p>
@@ -40,6 +40,3 @@
 </nav>
 </div>
 <app-modal-info></app-modal-info>
-
-
-

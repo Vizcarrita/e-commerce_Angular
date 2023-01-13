@@ -1,4 +1,26 @@
-<div class="wrapper bg-white">
+<div class="body">
+    <div class="login">
+        <h2>Login</h2>
+        <form class="login-form" [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="textbox">
+                <input type="email" placeholder="Email" formControlName="email" required>
+                <span>
+                    <i class="fa-solid fa-envelope"></i>
+                </span>
+            </div>
+            <div class="textbox">
+                <input type="password" placeholder="Password" formControlName="password" required>
+                <span>
+                    <i class="fa-solid fa-lock"></i>
+                </span>
+            </div>
+            <button type="submit">Iniciar</button>
+            <a routerLink="/auth/registro">No tienes cuenta? Registrarse</a>
+        </form>
+    </div>
+</div>
+
+<!-- <div class="wrapper bg-white">
     <div class="h2 text-center">Login</div>
     <form class="pt-3" [formGroup]="loginForm" (ngSubmit)="login()">
         <div class="form-group py-2">
@@ -18,4 +40,4 @@
         <button type="submit" class="btn btn-block text-center my-3">Iniciar</button>
         <div class="text-center pt-3 text-muted">No tienes cuenta? <a routerLink="/auth/registro">Registrarse</a></div>
     </form>
-</div> 
+</div>  -->

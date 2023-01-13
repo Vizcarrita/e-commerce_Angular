@@ -17,6 +17,7 @@ export class AgregarComponent {
     categoria:["",],
     precio:[,[Validators.required]],
     descripcion:[,[Validators.required]],
+    img:[,[Validators.required]],
   });
 
   constructor(private fb: FormBuilder,
